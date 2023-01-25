@@ -35,11 +35,11 @@ b. Opens two sockets with the server, one on the make appointment port 6666, and
 the other on the cancel appointment port 6667
 c. Sends the patient’s name to both sockets
 d. In a loop, 
-i. Prompts and asks the user if he wants to make or cancel an appointment
-ii. Reads the doctor id and the timeslot index from the user
-iii. Sends the doctor id and the timeslot index to the appropriate socket
-iv. Reads the response message from the server
-v. Prints the response message to the user on console
+ i. Prompts and asks the user if he wants to make or cancel an appointment
+ ii. Reads the doctor id and the timeslot index from the user
+ iii. Sends the doctor id and the timeslot index to the appropriate socket
+ iv. Reads the response message from the server
+ v. Prints the response message to the user on console
 ## 4. Class Server:
 
 a. It contains a hospital object that contains many doctors
@@ -53,49 +53,48 @@ appointments from many clients in parallel. Use multithreading for that.
 
 c. For serving a make appointment request coming on port 6666:
 
-i. Reads the patient’s name from the client socket
+ i. Reads the patient’s name from the client socket
 
-ii. Reads the doctor id and the timeslot index sent from the client socket
-
-iii. Calls function makeAppointment of class hospital to make an appointment 
+ ii. Reads the doctor id and the timeslot index sent from the client socket
+  iii. Calls function makeAppointment of class hospital to make an appointment 
 for this patient name to the read doctor id at the read timeslot index
 
-iv. Sends a response message to the client socket with a descriptive 
+ iv. Sends a response message to the client socket with a descriptive 
 message indicating whether:
 
-1. Making the appointment is done successfully (Success)
+   1. Making the appointment is done successfully (Success)
 
-2. the doctor id is not found in hospital (Failure)
+   2. the doctor id is not found in hospital (Failure)
 
-3. the timeslot index is out of boundary (Failure)
+   3. the timeslot index is out of boundary (Failure)
 
-4. the doctor is already busy at this timeslot (Failure)
+   4. the doctor is already busy at this timeslot (Failure)
 
 
-v. Calls function print of the hospital object to print it on the server console 
+ v. Calls function print of the hospital object to print it on the server console 
 
 
 d. For serving a cancel appointment request coming on port 6667:
 
-i. Reads the patient’s name from the client socket
+ i. Reads the patient’s name from the client socket
 
-ii. Reads the doctor id and the timeslot index sent from the client socket
+ ii. Reads the doctor id and the timeslot index sent from the client socket
 
-iii. Calls function cancelAppointment of class hospital to cancel the
+ iii. Calls function cancelAppointment of class hospital to cancel the
 appointment of this patient from the read doctor id and timeslot index
 
-iv. Sends a response message to the client socket with a descriptive 
+ iv. Sends a response message to the client socket with a descriptive 
 message indicating whether:
 
-1. Cancelling the appointment is done successfully (Success)
+  1. Cancelling the appointment is done successfully (Success)
 
-2. the doctor id is not found in hospital (Failure)
+  2. the doctor id is not found in hospital (Failure)
 
-3. the timeslot index is out of boundary (Failure)
+  3. the timeslot index is out of boundary (Failure)
 
-4. the doctor doesn’t have an appointment at this timeslot (Failure)
+  4. the doctor doesn’t have an appointment at this timeslot (Failure)
 
-5. the doctor has an appointment to a different patient name at this 
+  5. the doctor has an appointment to a different patient name at this 
 timeslot (Failure)
 
-v. Calls function print of the hospital object to print it on the server console
+ v. Calls function print of the hospital object to print it on the server console
