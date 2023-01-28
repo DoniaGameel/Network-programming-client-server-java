@@ -98,3 +98,8 @@ message indicating whether:
 timeslot (Failure)
 
  v. Calls function print of the hospital object to print it on the server console
+ 
+ ## Contributors
+
+[Donia Gameel](https://github.com/DoniaGameel).
+
